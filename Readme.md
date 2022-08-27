@@ -8,6 +8,7 @@ apt install danted
 
 Simple danted.conf  (/etc/danted)
 access from any clients and access to any servers for ipv4 & ipv6
+danted socks5 port 1080 
 eth1 is the public Interface on the machine 
 
 
@@ -31,3 +32,5 @@ socks pass {
         from: 0/0 to: 0/0
         log: error connect disconnect
 }
+
+Usage of the proxy on Apple 
