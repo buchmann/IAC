@@ -3,7 +3,7 @@ Key Node need Public IPV4 & IPV6 Adresss
 
 After VM Deployment 
 Dante Install 
-apt install danted
+apt install dante-server
 
 
 Simple danted.conf  (/etc/danted)
