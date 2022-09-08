@@ -25,21 +25,22 @@ provider "grid" {
 }
 
 resource "grid_network" "net" {
-    nodes = [50]
+    nodes = [332]
     ip_range = "10.1.0.0/16"
     name = "network"
     description = "newer network"
 }
 
 resource "grid_deployment" "m1" {
-  node = 50
+  node = 332
   network_name = grid_network.net.name
-  ip_range = lookup(grid_network.net.nodes_ip_range, 50, "")
+  ip_range = lookup(grid_network.net.nodes_ip_range, 332, "")
   vms {
-    name = "mbhome1"
-    flist = "https://hub.grid.tf/omar0.3bot/omarelawady-ubuntu-20.04.flist"
+    name = "mbhome2"
+    flist = "https://hub.grid.tf/manfred.3bot/mbx1010-dante-auth-latest.flist"
     cpu = 1
-    memory = 1024
+    memory = 2024
+    rootfs_size = 1024
     publicip6 = true
     publicip = true
     env_vars = {
@@ -48,7 +49,7 @@ resource "grid_deployment" "m1" {
 
   }
 }
-output "node510_mbhome5_ip" {
+output "node332_ip" {
     value = grid_deployment.m1.vms[0].ip
 }
 output "public_ip6" {
